@@ -1,0 +1,11 @@
+# dataset: birds
+# class: bird
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 240
+# tile_threshold: 360
+# images selected: 2 of 2
+# units in pool: 1302
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+_DSC5214.tif
+_DSC5295.tif

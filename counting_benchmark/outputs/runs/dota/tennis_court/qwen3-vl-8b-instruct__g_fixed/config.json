@@ -1,0 +1,19 @@
+{
+  "run_id": "qwen3-vl-8b-instruct__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/tennis_court",
+  "model": "qwen3-vl-8b-instruct",
+  "tile_size": 1888,
+  "tile_threshold": 2832,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__tennis_court__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 3188,
+  "N": 689,
+  "n_images": 401,
+  "model_label": "Qwen3-VL-8B-Instruct",
+  "modelstr": "Qwen/Qwen3-VL-8B-Instruct",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 2822.0
+}

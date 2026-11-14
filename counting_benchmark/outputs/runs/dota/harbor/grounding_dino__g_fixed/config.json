@@ -1,0 +1,19 @@
+{
+  "run_id": "grounding_dino__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/harbor",
+  "model": "grounding_dino",
+  "text_prompt": null,
+  "text_prompt_resolved": "harbor",
+  "score_thresh": 0.5,
+  "capture_score_floor": 0.05,
+  "tile_size": 1360,
+  "tile_threshold": 2040,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__harbor__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 8118,
+  "N": 2084,
+  "n_images": 456
+}

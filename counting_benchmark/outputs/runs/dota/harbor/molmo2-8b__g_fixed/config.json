@@ -1,0 +1,19 @@
+{
+  "run_id": "molmo2-8b__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/harbor",
+  "model": "molmo2-8b",
+  "tile_size": 1360,
+  "tile_threshold": 2040,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__harbor__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 8118,
+  "N": 2084,
+  "n_images": 456,
+  "model_label": "Molmo2-8B",
+  "modelstr": "allenai/Molmo2-8B",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 1974.0
+}

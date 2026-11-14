@@ -1,0 +1,67 @@
+# dataset: dota
+# class: roundabout
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 384
+# tile_threshold: 576
+# images selected: 58 of 249
+# units in pool: 5064
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+P2466.png
+P2606.png
+P2213.png
+P2721.png
+P2547.png
+P2278.png
+P1586.png
+P1601.png
+P1340.png
+P1607.png
+P0067.png
+P2513.png
+P1609.png
+P1918.png
+P1277.png
+P1410.png
+P2545.png
+P0078.png
+P1699.png
+P0113.png
+P1854.png
+P2769.png
+P1748.png
+P2417.png
+P1704.png
+P1619.png
+P1380.png
+P2467.png
+P0164.png
+P2495.png
+P1462.png
+P1069.png
+P2477.png
+P1656.png
+P2426.png
+P2539.png
+P0076.png
+P1594.png
+P2415.png
+P2485.png
+P2435.png
+P2519.png
+P1982.png
+P2413.png
+P1703.png
+P1653.png
+P0864.png
+P0099.png
+P1747.png
+P2271.png
+P2438.png
+P1753.png
+P2735.png
+P1809.png
+P1453.png
+P1752.png
+P2464.png
+P1600.png

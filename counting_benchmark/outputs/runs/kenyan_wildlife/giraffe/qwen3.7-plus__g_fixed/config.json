@@ -1,0 +1,19 @@
+{
+  "run_id": "qwen3.7-plus__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "kenyan_wildlife/giraffe",
+  "model": "qwen3.7-plus",
+  "tile_size": 752,
+  "tile_threshold": 1128,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/kenyan_wildlife__giraffe__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 806,
+  "N": 5005,
+  "n_images": 143,
+  "model_label": "Qwen3.7-Plus",
+  "modelstr": "qwen/qwen3.7-plus",
+  "source_csv": "proprietary_all_tiles_current.csv",
+  "F_model": 2581.0
+}

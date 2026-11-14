@@ -1,0 +1,19 @@
+{
+  "run_id": "aya-vision-8b__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/small_vehicle",
+  "model": "aya-vision-8b",
+  "tile_size": 256,
+  "tile_threshold": 384,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__small_vehicle__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 6583,
+  "N": 5032,
+  "n_images": 64,
+  "model_label": "Aya-Vision-8B",
+  "modelstr": "CohereLabs/aya-vision-8b",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 11720.0
+}

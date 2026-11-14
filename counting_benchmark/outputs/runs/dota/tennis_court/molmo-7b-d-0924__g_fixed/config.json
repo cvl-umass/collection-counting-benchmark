@@ -1,0 +1,19 @@
+{
+  "run_id": "molmo-7b-d-0924__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/tennis_court",
+  "model": "molmo-7b-d-0924",
+  "tile_size": 1888,
+  "tile_threshold": 2832,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__tennis_court__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 3188,
+  "N": 689,
+  "n_images": 401,
+  "model_label": "Molmo-7B-D-0924",
+  "modelstr": "allenai/Molmo-7B-D-0924",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 3400.0
+}

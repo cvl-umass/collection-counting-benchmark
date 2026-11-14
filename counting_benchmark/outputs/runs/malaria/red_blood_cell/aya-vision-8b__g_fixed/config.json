@@ -1,0 +1,19 @@
+{
+  "run_id": "aya-vision-8b__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "malaria/red_blood_cell",
+  "model": "aya-vision-8b",
+  "tile_size": 1168,
+  "tile_threshold": 1752,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/malaria__red_blood_cell__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 83034,
+  "N": 1688,
+  "n_images": 1328,
+  "model_label": "Aya-Vision-8B",
+  "modelstr": "CohereLabs/aya-vision-8b",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 82275.0
+}

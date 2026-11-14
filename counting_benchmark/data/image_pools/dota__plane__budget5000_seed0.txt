@@ -1,0 +1,99 @@
+# dataset: dota
+# class: plane
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 544
+# tile_threshold: 816
+# images selected: 90 of 269
+# units in pool: 5043
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+P2239.png
+P1281.png
+P2550.png
+P1165.png
+P1610.png
+P1480.png
+P1394.png
+P2226.png
+P1743.png
+P0258.png
+P0038.png
+P2801.png
+P1483.png
+P2138.png
+P1376.png
+P1133.png
+P2557.png
+P1128.png
+P0248.png
+P1159.png
+P1403.png
+P2247.png
+P2689.png
+P0000.png
+P1152.png
+P1142.png
+P0697.png
+P0183.png
+P1741.png
+P0113.png
+P1562.png
+P1489.png
+P1144.png
+P1103.png
+P1499.png
+P1274.png
+P2271.png
+P1481.png
+P0215.png
+P1707.png
+P1765.png
+P1972.png
+P1594.png
+P1868.png
+P1598.png
+P1747.png
+P1552.png
+P1117.png
+P0041.png
+P1809.png
+P1563.png
+P0213.png
+P1166.png
+P0178.png
+P0301.png
+P1513.png
+P1541.png
+P1526.png
+P1413.png
+P1540.png
+P1158.png
+P0169.png
+P0251.png
+P1698.png
+P2330.png
+P2805.png
+P2741.png
+P1398.png
+P1497.png
+P1401.png
+P2236.png
+P1161.png
+P1399.png
+P1742.png
+P0173.png
+P0289.png
+P2220.png
+P1178.png
+P1869.png
+P1609.png
+P2230.png
+P1414.png
+P2787.png
+P1114.png
+P2207.png
+P1660.png
+P2225.png
+P1529.png
+P1132.png
+P1545.png

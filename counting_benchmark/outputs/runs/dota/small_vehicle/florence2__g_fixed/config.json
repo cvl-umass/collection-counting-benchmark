@@ -1,0 +1,19 @@
+{
+  "run_id": "florence2__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/small_vehicle",
+  "model": "florence2",
+  "text_prompt": null,
+  "text_prompt_resolved": "small vehicle",
+  "score_thresh": 0.5,
+  "capture_score_floor": 0.05,
+  "tile_size": 256,
+  "tile_threshold": 384,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__small_vehicle__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 6583,
+  "N": 5032,
+  "n_images": 64
+}

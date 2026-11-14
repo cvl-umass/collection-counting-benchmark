@@ -1,0 +1,19 @@
+{
+  "run_id": "molmo-7b-d-0924__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/plane",
+  "model": "molmo-7b-d-0924",
+  "tile_size": 544,
+  "tile_threshold": 816,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__plane__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 3370,
+  "N": 5043,
+  "n_images": 90,
+  "model_label": "Molmo-7B-D-0924",
+  "modelstr": "allenai/Molmo-7B-D-0924",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 4900.0
+}

@@ -1,0 +1,31 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Downloaded raw datasets (Birds is tracked; the rest come from download_data.sh)
+counting_datasets/raw/*
+!counting_datasets/raw/birds/
+counting_datasets/raw/.staging/
+
+# Built dataset index
+counting_datasets/counting/data/
+
+# Regenerable caches and derived outputs (see counting_benchmark/README.md)
+counting_benchmark/data/dinov3/
+counting_benchmark/outputs/analysis/perstep_Fhat/
+counting_benchmark/outputs/analysis/perstep/
+counting_benchmark/outputs/analysis/checkpoints/
+counting_benchmark/outputs/analysis/estimates_checkpoints.parquet
+counting_benchmark/outputs/analysis/figures/
+
+# Run files that are omitted for size
+counting_benchmark/outputs/runs/**/detections.npz
+counting_benchmark/outputs/runs/**/checkpoint_t*.pt

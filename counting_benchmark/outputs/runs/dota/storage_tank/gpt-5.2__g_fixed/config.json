@@ -1,0 +1,19 @@
+{
+  "run_id": "gpt-5.2__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/storage_tank",
+  "model": "gpt-5.2",
+  "tile_size": 272,
+  "tile_threshold": 408,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__storage_tank__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 549,
+  "N": 5176,
+  "n_images": 26,
+  "model_label": "GPT-5.2",
+  "modelstr": "openai/gpt-5.2",
+  "source_csv": "proprietary_all_tiles_current.csv",
+  "F_model": 10054.0
+}

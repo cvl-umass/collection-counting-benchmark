@@ -1,0 +1,19 @@
+{
+  "run_id": "molmo2-8b__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/helicopter",
+  "model": "molmo2-8b",
+  "tile_size": 768,
+  "tile_threshold": 1152,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__helicopter__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 713,
+  "N": 1523,
+  "n_images": 48,
+  "model_label": "Molmo2-8B",
+  "modelstr": "allenai/Molmo2-8B",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 474.0
+}

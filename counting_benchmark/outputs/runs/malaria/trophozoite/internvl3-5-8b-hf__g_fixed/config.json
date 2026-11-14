@@ -1,0 +1,19 @@
+{
+  "run_id": "internvl3-5-8b-hf__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "malaria/trophozoite",
+  "model": "internvl3-5-8b-hf",
+  "tile_size": 1488,
+  "tile_threshold": 2232,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/malaria__trophozoite__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 1584,
+  "N": 655,
+  "n_images": 655,
+  "model_label": "InternVL3.5-8B",
+  "modelstr": "OpenGVLab/InternVL3_5-8B-HF",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 1341.0
+}

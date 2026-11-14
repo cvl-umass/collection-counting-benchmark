@@ -1,0 +1,19 @@
+{
+  "run_id": "qwen3.7-plus__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/small_vehicle",
+  "model": "qwen3.7-plus",
+  "tile_size": 256,
+  "tile_threshold": 384,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__small_vehicle__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 6583,
+  "N": 5032,
+  "n_images": 64,
+  "model_label": "Qwen3.7-Plus",
+  "modelstr": "qwen/qwen3.7-plus",
+  "source_csv": "proprietary_all_tiles_current.csv",
+  "F_model": 15216.0
+}

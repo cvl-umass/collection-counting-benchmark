@@ -1,0 +1,213 @@
+{
+  "description": "The 12 tasks of the CLC-12 collection-level counting benchmark.",
+  "generated_at": "2026-06-23T22:17:52.382145+00:00",
+  "selection_rationale": "3 classes per occupancy level (full/partial/sparse/rare), gated on pool F_total, spanning visual domains; tile budget fixed at 5000 units.",
+  "source": {
+    "regimes_csv": "outputs/regimes_v2.csv",
+    "tile_sizes_json": "outputs/suggested_tile_sizes.json",
+    "pool_dir": "data/image_pools",
+    "tile_budget_units": 5000,
+    "pool_seed": 0
+  },
+  "level_definitions": {
+    "full": {
+      "frac_empty": "< 0.05",
+      "meaning": "fully occupied; empty-filter cannot help"
+    },
+    "partial": {
+      "frac_empty": "0.05 - 0.60",
+      "meaning": "partly occupied; transition level"
+    },
+    "sparse": {
+      "frac_empty": "0.60 - 0.90",
+      "meaning": "mostly empty"
+    },
+    "rare": {
+      "frac_empty": ">= 0.90",
+      "meaning": "objects are rare events; empty-filter dominates"
+    }
+  },
+  "n_classes": 12,
+  "classes": [
+    {
+      "class_key": "malaria/trophozoite",
+      "dataset": "malaria",
+      "class": "trophozoite",
+      "level": "full",
+      "modality": "microscopy",
+      "tile_size": 1488,
+      "tile_threshold": 2232,
+      "pool_list": "data/image_pools/malaria__trophozoite__budget5000_seed0.txt",
+      "n_units": 655,
+      "F_total": 1584,
+      "frac_empty": 0.0,
+      "count_mean": 2.4183,
+      "cv": 0.7176
+    },
+    {
+      "class_key": "malaria/difficult",
+      "dataset": "malaria",
+      "class": "difficult",
+      "level": "full",
+      "modality": "microscopy",
+      "tile_size": 1424,
+      "tile_threshold": 2136,
+      "pool_list": "data/image_pools/malaria__difficult__budget5000_seed0.txt",
+      "n_units": 347,
+      "F_total": 446,
+      "frac_empty": 0.0,
+      "count_mean": 1.2853,
+      "cv": 0.4402
+    },
+    {
+      "class_key": "malaria/red_blood_cell",
+      "dataset": "malaria",
+      "class": "red_blood_cell",
+      "level": "full",
+      "modality": "microscopy",
+      "tile_size": 1168,
+      "tile_threshold": 1752,
+      "pool_list": "data/image_pools/malaria__red_blood_cell__budget5000_seed0.txt",
+      "n_units": 1688,
+      "F_total": 83034,
+      "frac_empty": 0.0213,
+      "count_mean": 49.1908,
+      "cv": 0.7718
+    },
+    {
+      "class_key": "birds/bird",
+      "dataset": "birds",
+      "class": "bird",
+      "level": "partial",
+      "modality": "ground-level (wildlife)",
+      "tile_size": 240,
+      "tile_threshold": 360,
+      "pool_list": "data/image_pools/birds__bird__budget5000_seed0.txt",
+      "n_units": 1302,
+      "F_total": 18696,
+      "frac_empty": 0.2442,
+      "count_mean": 14.3594,
+      "cv": 1.4844
+    },
+    {
+      "class_key": "dota/tennis_court",
+      "dataset": "dota",
+      "class": "tennis_court",
+      "level": "partial",
+      "modality": "satellite/aerial",
+      "tile_size": 1888,
+      "tile_threshold": 2832,
+      "pool_list": "data/image_pools/dota__tennis_court__budget5000_seed0.txt",
+      "n_units": 689,
+      "F_total": 3188,
+      "frac_empty": 0.3745,
+      "count_mean": 4.627,
+      "cv": 1.1868
+    },
+    {
+      "class_key": "dota/harbor",
+      "dataset": "dota",
+      "class": "harbor",
+      "level": "partial",
+      "modality": "satellite/aerial",
+      "tile_size": 1360,
+      "tile_threshold": 2040,
+      "pool_list": "data/image_pools/dota__harbor__budget5000_seed0.txt",
+      "n_units": 2084,
+      "F_total": 8118,
+      "frac_empty": 0.5206,
+      "count_mean": 3.8954,
+      "cv": 2.4036
+    },
+    {
+      "class_key": "dota/ship",
+      "dataset": "dota",
+      "class": "ship",
+      "level": "sparse",
+      "modality": "satellite/aerial",
+      "tile_size": 512,
+      "tile_threshold": 768,
+      "pool_list": "data/image_pools/dota__ship__budget5000_seed0.txt",
+      "n_units": 5061,
+      "F_total": 10632,
+      "frac_empty": 0.787,
+      "count_mean": 2.1008,
+      "cv": 5.0706
+    },
+    {
+      "class_key": "dota/plane",
+      "dataset": "dota",
+      "class": "plane",
+      "level": "sparse",
+      "modality": "satellite/aerial",
+      "tile_size": 544,
+      "tile_threshold": 816,
+      "pool_list": "data/image_pools/dota__plane__budget5000_seed0.txt",
+      "n_units": 5043,
+      "F_total": 3370,
+      "frac_empty": 0.7944,
+      "count_mean": 0.6683,
+      "cv": 3.2073
+    },
+    {
+      "class_key": "dota/small_vehicle",
+      "dataset": "dota",
+      "class": "small_vehicle",
+      "level": "sparse",
+      "modality": "satellite/aerial",
+      "tile_size": 256,
+      "tile_threshold": 384,
+      "pool_list": "data/image_pools/dota__small_vehicle__budget5000_seed0.txt",
+      "n_units": 5032,
+      "F_total": 6583,
+      "frac_empty": 0.8084,
+      "count_mean": 1.3082,
+      "cv": 5.365
+    },
+    {
+      "class_key": "kenyan_wildlife/giraffe",
+      "dataset": "kenyan_wildlife",
+      "class": "giraffe",
+      "level": "rare",
+      "modality": "aerial (wildlife)",
+      "tile_size": 752,
+      "tile_threshold": 1128,
+      "pool_list": "data/image_pools/kenyan_wildlife__giraffe__budget5000_seed0.txt",
+      "n_units": 5005,
+      "F_total": 806,
+      "frac_empty": 0.9167,
+      "count_mean": 0.161,
+      "cv": 4.3946
+    },
+    {
+      "class_key": "dota/helicopter",
+      "dataset": "dota",
+      "class": "helicopter",
+      "level": "rare",
+      "modality": "satellite/aerial",
+      "tile_size": 768,
+      "tile_threshold": 1152,
+      "pool_list": "data/image_pools/dota__helicopter__budget5000_seed0.txt",
+      "n_units": 1523,
+      "F_total": 713,
+      "frac_empty": 0.9284,
+      "count_mean": 0.4682,
+      "cv": 8.1154
+    },
+    {
+      "class_key": "dota/storage_tank",
+      "dataset": "dota",
+      "class": "storage_tank",
+      "level": "rare",
+      "modality": "satellite/aerial",
+      "tile_size": 272,
+      "tile_threshold": 408,
+      "pool_list": "data/image_pools/dota__storage_tank__budget5000_seed0.txt",
+      "n_units": 5176,
+      "F_total": 549,
+      "frac_empty": 0.9811,
+      "count_mean": 0.1061,
+      "cv": 14.2407
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "internvl3-5-8b-hf__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "dota/ship",
+  "model": "internvl3-5-8b-hf",
+  "tile_size": 512,
+  "tile_threshold": 768,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/dota__ship__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 10632,
+  "N": 5061,
+  "n_images": 160,
+  "model_label": "InternVL3.5-8B",
+  "modelstr": "OpenGVLab/InternVL3_5-8B-HF",
+  "source_csv": "open_source_all_tiles_current.csv",
+  "F_model": 14517.0
+}

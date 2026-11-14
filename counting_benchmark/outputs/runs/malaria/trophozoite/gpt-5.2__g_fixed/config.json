@@ -1,0 +1,19 @@
+{
+  "run_id": "gpt-5.2__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "malaria/trophozoite",
+  "model": "gpt-5.2",
+  "tile_size": 1488,
+  "tile_threshold": 2232,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/malaria__trophozoite__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 1584,
+  "N": 655,
+  "n_images": 655,
+  "model_label": "GPT-5.2",
+  "modelstr": "openai/gpt-5.2",
+  "source_csv": "proprietary_all_tiles_current.csv",
+  "F_model": 2019.0
+}

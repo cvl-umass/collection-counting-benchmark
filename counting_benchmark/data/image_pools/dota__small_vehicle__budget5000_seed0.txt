@@ -1,0 +1,73 @@
+# dataset: dota
+# class: small_vehicle
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 256
+# tile_threshold: 384
+# images selected: 64 of 1179
+# units in pool: 5032
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+P1860.png
+P0872.png
+P1878.png
+P0841.png
+P2266.png
+P2570.png
+P0330.png
+P0904.png
+P2086.png
+P0966.png
+P0961.png
+P2755.png
+P2668.png
+P1788.png
+P2604.png
+P2141.png
+P2283.png
+P1991.png
+P1773.png
+P0002.png
+P0972.png
+P0604.png
+P1995.png
+P0175.png
+P1023.png
+P0273.png
+P1501.png
+P2219.png
+P0146.png
+P0991.png
+P2157.png
+P0448.png
+P0687.png
+P1026.png
+P0975.png
+P0533.png
+P0366.png
+P2162.png
+P2053.png
+P1182.png
+P0590.png
+P0407.png
+P0785.png
+P1374.png
+P2211.png
+P2650.png
+P0411.png
+P0123.png
+P1958.png
+P1977.png
+P0262.png
+P1998.png
+P1509.png
+P0443.png
+P1386.png
+P2070.png
+P2285.png
+P0856.png
+P2287.png
+P0998.png
+P1446.png
+P0338.png
+P0116.png
+P1780.png

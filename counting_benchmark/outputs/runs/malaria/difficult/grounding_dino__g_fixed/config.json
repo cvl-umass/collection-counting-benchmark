@@ -1,0 +1,19 @@
+{
+  "run_id": "grounding_dino__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "malaria/difficult",
+  "model": "grounding_dino",
+  "text_prompt": null,
+  "text_prompt_resolved": "difficult",
+  "score_thresh": 0.5,
+  "capture_score_floor": 0.05,
+  "tile_size": 1424,
+  "tile_threshold": 2136,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/malaria__difficult__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 446,
+  "N": 347,
+  "n_images": 347
+}

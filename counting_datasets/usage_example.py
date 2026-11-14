@@ -1,0 +1,276 @@
+from pathlib import Path
+
+from counting_dataset.index.builder import IndexBuilder
+from counting_dataset.adapters.malaria import MalariaAdapter
+from counting_dataset.adapters.kenyan_wildlife import KenyanWildlifeAdapter
+from counting_dataset.adapters.dota import DOTAAdapter
+from counting_dataset.adapters.birds import BirdsAdapter
+
+from counting_dataset import CountingDatasetIndex
+from counting_dataset.index.policy import FilterPolicy
+
+
+def _print_class_summary(
+    index: CountingDatasetIndex,
+    dataset: str,
+    apply_policy: bool = False,
+    limit: int = 15,
+):
+    classes = index.get_classes(datasets=[dataset], apply_policy=apply_policy)
+    print(f"\n--- Classes ({dataset}) [showing up to {limit}] ---")
+    if not classes:
+        print("  (none)")
+        return classes
+    for c in classes[:limit]:
+        print(
+            f"  {c['class_key']}: images={c['num_images']} instances={c['num_instances']} ann_types={c.get('ann_types')}"
+        )
+    if len(classes) > limit:
+        print(f"  ... (+{len(classes) - limit} more)")
+    return classes
+
+
+def _peek_image_dataset(ds, title: str, n: int = 2):
+    print(f"\n--- {title} ---")
+    print("  num_images:", len(ds))
+    if len(ds) == 0:
+        return
+    for i in range(min(n, len(ds))):
+        img, tgt = ds[i]
+        print(f"  sample[{i}] image:", img)
+        print(f"    total_count={tgt.get('total_count')}")
+        if "review_status" in tgt:
+            print(
+                f"    review_status={tgt.get('review_status')} "
+                f"num_annotators={tgt.get('num_annotators')} "
+                f"num_point_votes={tgt.get('num_point_votes')}"
+            )
+        counts = tgt.get("counts", {})
+        if isinstance(counts, dict):
+            some = list(sorted(counts.items()))[:8]
+            print(f"    classes_present={len(counts)} (showing up to 8): {some}")
+        print("tgt keys: ", tgt.keys())
+
+
+def main():
+    index_dest = Path("counting/data")
+    rebuild_index = True
+
+    # ------------------------------------------------------------------
+    # Build Index
+    # ------------------------------------------------------------------
+    if rebuild_index:
+        builder = IndexBuilder(raw_root=Path("raw"), out_root=index_dest)
+        db_path = builder.build(
+            [
+                MalariaAdapter(),
+                KenyanWildlifeAdapter(),
+                DOTAAdapter(),
+                BirdsAdapter(),
+            ],
+            overwrite=True,
+            show_progress=True,
+        )
+        print("Built:", db_path)
+
+    # ------------------------------------------------------------------
+    # Index + discovery
+    # ------------------------------------------------------------------
+    policy = FilterPolicy(
+        min_images_per_class=10,
+        # allowed_splits={"train", "test"},
+        allowed_ann_types={"hbb", "point", "obb"},
+    )
+
+    index = CountingDatasetIndex(root=index_dest, policy=policy)
+
+    print("\n=== Available datasets ===")
+    ds_list = index.available_datasets()
+    print(ds_list)
+
+    print("\n=== Available splits (global) ===")
+    print(index.available_splits())
+
+    for ds_name in ds_list:
+        print(f"\n--- Available splits ({ds_name}) ---")
+        print(index.available_splits(dataset=ds_name))
+
+    # ------------------------------------------------------------------
+    # BIRDS
+    # ------------------------------------------------------------------
+    _print_class_summary(index, "birds", apply_policy=False, limit=5)
+
+    print("\n=== Birds: load_dataset('birds') (image-centric) ===")
+    ds_birds = index.load_dataset("birds", load_images=False)
+    _peek_image_dataset(ds_birds, "Birds image-centric peek")
+
+    # Sanity checks:
+    # - instances should be HBB (role="instance", source=GENERATED)
+    # - original point annotations should appear under aux["point"]
+    if len(ds_birds) > 0:
+        _, tgt = ds_birds[0]
+        print("\nBirds sanity checks on first image:")
+        inst = tgt.get("instances", {}) or {}
+        if inst:
+            ck0 = sorted(inst.keys())[0]
+            anns0 = inst[ck0]
+            ann_types0 = sorted({a.get("ann_type") for a in anns0})
+            print(f"  instances: {ck0} -> {len(anns0)} anns, ann_types={ann_types0}")
+        aux = tgt.get("aux", {}) or {}
+        point_aux = aux.get("point", {}) or {}
+        if point_aux:
+            ck0 = sorted(point_aux.keys())[0]
+            print(f"  aux['point'] present for class {ck0}: {len(point_aux[ck0])} point annotations")
+        else:
+            print("  aux['point']: (none — bbox cache may not have been generated)")
+
+    birds_classes = index.get_classes(datasets=["birds"], apply_policy=False)
+    if birds_classes:
+        birds_ck = birds_classes[0]["class_key"]
+        print(f"\n=== Birds: load_class({birds_ck}) ===")
+        ds_birds_class = index.load_class(birds_ck, load_images=False)
+        print("  class-centric length:", len(ds_birds_class))
+        if len(ds_birds_class) > 0:
+            _, tgt = ds_birds_class[0]
+            print("  count (HBB instances):", tgt["count"])
+            print("  aux roles present:", list(tgt.get("aux", {}).keys()))
+        meta = ds_birds_class.image_metadata()
+        print(f"  image_metadata(): {len(meta)} entries, keys={list(meta[0].keys()) if meta else []}")
+
+  
+
+    # ------------------------------------------------------------------
+    # DOTA (v1.5)
+    # ------------------------------------------------------------------
+    _print_class_summary(index, "dota", apply_policy=False, limit=10)
+
+    print("\n=== DOTA: load_dataset('dota') (image-centric) ===")
+    ds_dota = index.load_dataset(
+        "dota",
+        split="train",
+        load_images=False,
+        min_total_count=1,  # ensure at least one canonical instance
+        on_missing_split="warn",
+        natural_sort=True,
+    )
+    _peek_image_dataset(ds_dota, "DOTA image-centric peek")
+
+    # Sanity checks:
+    # - instances should be HBB (role="instance") and contribute to counts
+    # - OBB should appear under aux["obb"]
+    if len(ds_dota) > 0:
+        img, tgt = ds_dota[0]
+        print("\nDOTA sanity checks on first sample:")
+
+        inst = tgt.get("instances", {}) or {}
+        if inst:
+            ck0 = sorted(inst.keys())[0]
+            anns0 = inst[ck0]
+            ann_types0 = sorted({a.get("ann_type") for a in anns0})
+            print(
+                f"  instances bucket example: {ck0} -> {len(anns0)} anns, ann_types={ann_types0}"
+            )
+            print(anns0[0])
+        else:
+            print(
+                "  [WARN] instances is empty on first sample (unexpected if min_total_count=1)."
+            )
+
+        aux = tgt.get("aux", {}) or {}
+        obb_aux = aux.get("obb", {}) or {}
+        if obb_aux:
+            ck0 = sorted(obb_aux.keys())[0]
+            boxes = obb_aux[ck0]
+            print(
+                f"  aux['obb'] present for class {ck0}: {len(boxes)} (showing up to 2)"
+            )
+            for b in boxes[:2]:
+                print("    obb:", b["geometry"])
+        else:
+            print("  aux['obb']: (none in this sample)")
+
+    # Class-centric load: pick one DOTA class
+    dota_classes = index.get_classes(datasets=["dota"], apply_policy=False)
+    if dota_classes:
+        dota_ck = dota_classes[0]["class_key"]
+        print(f"\n=== DOTA: load_class({dota_ck}) ===")
+        ds_dota_class = index.load_class(
+            dota_ck,
+            split="train",
+            load_images=False,
+            min_count=1,
+            on_missing_split="warn",
+            natural_sort=True,
+        )
+        print("  class-centric length:", len(ds_dota_class))
+        if len(ds_dota_class) > 0:
+            img, tgt = ds_dota_class[0]
+            print("tgt keys:", tgt.keys())
+            print("  image id: ", tgt["image_id"])
+            print("  sample image:", img)
+            print("  class count in image:", tgt["count"])
+            print("  instances: ", tgt["instances"][:2])
+
+   
+
+    # ------------------------------------------------------------------
+    # KENYAN WILDLIFE
+    # ------------------------------------------------------------------
+    _print_class_summary(index, "kenyan_wildlife", apply_policy=False, limit=10)
+    print("\n=== Kenyan wildlife: load_dataset('kenyan_wildlife') ===")
+    ds_kw = index.load_dataset(
+        "kenyan_wildlife",
+        # splits={"train", "test"},
+        load_images=False,
+        min_total_count=1,  # drop empty images
+        max_total_count=500,  # sanity cap
+        on_missing_split="warn",
+    )
+    _peek_image_dataset(ds_kw, "Kenyan wildlife image-centric peek")
+
+    print("\n=== Kenyan wildlife: per-class totals (image-centric) ===")
+    totals_kw = {}
+    for _, tgt in ds_kw:
+        for ck, cnt in tgt.get("counts", {}).items():
+            totals_kw[ck] = totals_kw.get(ck, 0) + cnt
+    for ck in sorted(totals_kw.keys()):
+        print(f"  {ck}: total_instances={totals_kw[ck]}")
+
+    # ------------------------------------------------------------------
+    # MALARIA
+    # ------------------------------------------------------------------
+    malaria_classes = _print_class_summary(
+        index, "malaria", apply_policy=False, limit=10
+    )
+    if malaria_classes:
+        class_key = malaria_classes[0]["class_key"]
+        print(f"\n=== Malaria: load_class({class_key}) ===")
+        ds_class = index.load_class(
+            class_key,
+            # split="train",
+            load_images=False,
+            min_count=5,
+            max_count=500,
+            on_missing_split="warn",
+        )
+        print("  class-centric length:", len(ds_class))
+        if len(ds_class) > 0:
+            img, target = ds_class[0]
+            print("  sample image:", img)
+            print("  class count in image:", target["count"])
+
+        print("\n=== Malaria: load_dataset('malaria') (image-centric) ===")
+        ds_mal = index.load_dataset(
+            "malaria",
+            # split="train",
+            load_images=False,
+            min_total_count=1,
+            on_missing_split="warn",
+        )
+        _peek_image_dataset(ds_mal, "Malaria image-centric peek")
+
+   
+
+
+if __name__ == "__main__":
+    main()

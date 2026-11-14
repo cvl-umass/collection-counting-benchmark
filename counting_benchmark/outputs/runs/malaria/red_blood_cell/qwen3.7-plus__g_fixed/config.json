@@ -1,0 +1,19 @@
+{
+  "run_id": "qwen3.7-plus__g_fixed",
+  "regime": "g_fixed",
+  "class_key": "malaria/red_blood_cell",
+  "model": "qwen3.7-plus",
+  "tile_size": 1168,
+  "tile_threshold": 1752,
+  "max_whole_image_side": 1536,
+  "image_pool_list": "data/image_pools/malaria__red_blood_cell__budget5000_seed0.txt",
+  "pool_size": null,
+  "pool_sample_seed": 0,
+  "F_true": 83034,
+  "N": 1688,
+  "n_images": 1328,
+  "model_label": "Qwen3.7-Plus",
+  "modelstr": "qwen/qwen3.7-plus",
+  "source_csv": "proprietary_all_tiles_current.csv",
+  "F_model": 96326.0
+}

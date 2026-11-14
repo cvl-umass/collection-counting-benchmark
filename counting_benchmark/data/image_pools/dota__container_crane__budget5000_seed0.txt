@@ -1,0 +1,18 @@
+# dataset: dota
+# class: container_crane
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 992
+# tile_threshold: 1488
+# images selected: 9 of 9
+# units in pool: 152
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+P2692.png
+P2732.png
+P2642.png
+P2761.png
+P2668.png
+P2733.png
+P2701.png
+P1228.png
+P2631.png

@@ -1,0 +1,51 @@
+# dataset: kenyan_wildlife
+# class: zebra
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 384
+# tile_threshold: 576
+# images selected: 42 of 189
+# units in pool: 5112
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+IMG_6237_JPG.rf.f28e0868b05007c50d003a16e1baa52e.jpg
+DSC_1390_JPG.rf.0c3fb785264bbd968a7d73eff88c8e37.jpg
+IMG_6295_JPG.rf.f39871af7c2d4c9babc0d125d77eb522.jpg
+DSC_1393_JPG.rf.ef6864e2d38ef8e0af8954837ba7c9eb.jpg
+IMG_4867_JPG.rf.f251bd3a6d6ede5bc5e2423d65bb000f.jpg
+IMG_6215_JPG.rf.332a1a60919970e99cf2e927233cfcd3.jpg
+IMG_9388_JPG.rf.2693e5d1fb78352d782033dcc899403d.jpg
+IMG_6239_JPG.rf.75a5d008060e521ca0b09ac2a9e84770.jpg
+DPP_00439_JPG.rf.0a89607f483047eb2ae57b4d02645d7c.jpg
+IMG_9534_JPG.rf.007e1d94dbb5e6ea0b3baa444377da6b.jpg
+IMG_9462_JPG.rf.d840502a441c459218189517f97a248e.jpg
+IMG_9466_JPG.rf.1801d5774c0968d8d720bc397c7b3bbb.jpg
+IMG_8873_JPG.rf.a78287053308fc622b92b70710e5de7c.jpg
+IMG_8965_JPG.rf.24fdd928e93b1be7eb9b53db1c21dc68.jpg
+IMG_3841_JPG.rf.697e8efb7adf1ccd7cf55c0ba7a2cfb0.jpg
+IMG_9001_JPG.rf.4e4fe9c9a1ccf7c7d18fc75b6493145f.jpg
+IMG_3558_JPG.rf.5c9c2aa2b6cda618efd2be05b6cbf00f.jpg
+IMG_3810_JPG.rf.570107592f586af3eb41a40ebf7e47bf.jpg
+IMG_9652_JPG.rf.9d938102e331f94c577d1ff93f2e2bd5.jpg
+IMG_4879_JPG.rf.b3cc6c46308e8d03c51dcee5413693ee.jpg
+IMG_9236_JPG.rf.184e09ddae6f875efdf36940a16d5d29.jpg
+IMG_8905_JPG.rf.a9acfe501816fa58896854a9dd736925.jpg
+IMG_9491_JPG.rf.e72973c2521a30ddf4a1afb717b3cd28.jpg
+IMG_8909_JPG.rf.75303cb16018e5c21742b7e4564ddf18.jpg
+DSC_1384_JPG.rf.6385fe5da80bd53476c73ecd7f4fddc4.jpg
+IMG_4679_JPG.rf.9bc8e6df71f1d6c50b3d74794a858a9b.jpg
+IMG_9271_JPG.rf.31dd47e5f73d0a4147175e795e7bdfec.jpg
+IMG_9367_JPG.rf.c43cb5f16b6816d183d7d6b330fccdcf.jpg
+IMG_9377_JPG.rf.455c2fa982d295a688ffeff2f293b574.jpg
+IMG_9227_JPG.rf.8619b15ce210dd2a883ee4e93b61870b.jpg
+IMG_9335_JPG.rf.1c47ed1afdfe3e5e6e43f2dd59f228a8.jpg
+IMG_8924_JPG.rf.e8a6b8bd7741cfb2e838621ee663e874.jpg
+IMG_9269_JPG.rf.2c3acde6abf0bb26ea9d227aca70a413.jpg
+IMG_9170_JPG.rf.3cb7a31f4deafa83535913fcf58634f0.jpg
+IMG_9688_JPG.rf.2716dc5c2e83fb63853d0e12070ec003.jpg
+DSC_1322_JPG.rf.216732430ac9fc3c3f9d1bada0da0fdc.jpg
+DPP_00370_JPG.rf.c008de65abeb461f45c1409fe906bbfe.jpg
+IMG_9530_JPG.rf.6ef77436ff70bd881459a363f11b82dc.jpg
+IMG_9525_JPG.rf.e5885d9050474c30d4281cd3dd444312.jpg
+IMG_9438_JPG.rf.7b5a19179eab50d707e5de01eedef8d7.jpg
+IMG_8960_JPG.rf.b1c3536264a0bd22452a0398f0acca5a.jpg
+IMG_9305_JPG.rf.4f23c8ce99fd6dc18fd4952d1b9db4b0.jpg

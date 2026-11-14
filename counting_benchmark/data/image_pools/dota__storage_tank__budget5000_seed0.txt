@@ -1,0 +1,35 @@
+# dataset: dota
+# class: storage_tank
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 272
+# tile_threshold: 408
+# images selected: 26 of 262
+# units in pool: 5176
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+P1688.png
+P2097.png
+P1696.png
+P2248.png
+P2739.png
+P1594.png
+P1743.png
+P1382.png
+P1748.png
+P1649.png
+P1868.png
+P1596.png
+P1376.png
+P2601.png
+P2426.png
+P1808.png
+P1591.png
+P1933.png
+P0000.png
+P2206.png
+P1224.png
+P1713.png
+P1421.png
+P1972.png
+P2668.png
+P1726.png

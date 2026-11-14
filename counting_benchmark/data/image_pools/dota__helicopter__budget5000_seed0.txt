@@ -1,0 +1,57 @@
+# dataset: dota
+# class: helicopter
+# tile_budget (units): 5000
+# seed: 0
+# tile_size: 768
+# tile_threshold: 1152
+# images selected: 48 of 48
+# units in pool: 1523
+# Pass as image_pool_list / --pool-list to reproduce this pool exactly.
+P0255.png
+P1394.png
+P0223.png
+P1809.png
+P1412.png
+P1154.png
+P1401.png
+P1159.png
+P0220.png
+P1395.png
+P1158.png
+P1479.png
+P2235.png
+P1098.png
+P2269.png
+P0251.png
+P1184.png
+P2236.png
+P1392.png
+P1179.png
+P2242.png
+P1486.png
+P2226.png
+P1139.png
+P1384.png
+P2271.png
+P1393.png
+P0169.png
+P1487.png
+P2173.png
+P0168.png
+P2210.png
+P1508.png
+P1150.png
+P1390.png
+P1410.png
+P1173.png
+P1170.png
+P1131.png
+P1397.png
+P2791.png
+P0263.png
+P1181.png
+P2247.png
+P1483.png
+P1149.png
+P1391.png
+P2600.png

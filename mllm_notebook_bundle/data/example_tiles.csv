@@ -1,0 +1,7 @@
+dataset,task,tileid,ground_truth_label,image_file
+birds,bird,254,3,birds_bird_tile_254.png
+malaria,trophozoite,101,2,malaria_trophozoite_tile_101.png
+malaria,red_blood_cell,301,49,malaria_red_blood_cell_tile_301.png
+dota,ship,445,1,dota_ship_tile_445.png
+dota,harbor,177,8,dota_harbor_tile_177.png
+kenyan_wildlife,giraffe,605,1,kenyan_wildlife_giraffe_tile_605.png
