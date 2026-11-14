@@ -8,12 +8,12 @@ Collection-level counting estimates the total number of target objects across a 
 
 ## Repository layout
 
-| Folder                  | Contents                                                                                                                          |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `clc12/`                | CLC-12 as two small CSVs: every counting unit with its ground-truth count, and the zero-shot count each off-the-shelf model predicts for it. |
+| Folder                  | Contents                                                                                                                                           |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `clc12/`                | CLC-12 as two small CSVs: every counting unit with its ground-truth count, and the zero-shot count each off-the-shelf model predicts for it.       |
 | `counting_datasets/`    | Download script for the four source datasets and the `counting_dataset` package that indexes them. Only the two Birds photographs are stored here. |
-| `counting_benchmark/`   | Tiling, the sequential labeling loop, samplers, estimators, model wrappers, replay simulation, analysis, and plotting.            |
-| `mllm_notebook_bundle/` | Notebooks for the multimodal-LLM counting pipeline: inference, count extraction, and timing and cost.                             |
+| `counting_benchmark/`   | Tiling, the sequential labeling loop, samplers, estimators, model wrappers, replay simulation, analysis, and plotting.                             |
+| `mllm_notebook_bundle/` | Notebooks for the multimodal-LLM counting pipeline: inference, count extraction, and timing and cost.                                              |
 
 `counting_benchmark/outputs/` also holds the run records and result tables behind the paper (predicted counts, sampled tiles, and estimates), so the reported numbers can be inspected without rerunning anything. No model checkpoints are distributed: detectors are fine-tuned from public COCO weights during a run, and zero-shot models load from their public releases. Each folder has its own README with details.
 
@@ -21,12 +21,12 @@ Collection-level counting estimates the total number of target objects across a 
 
 Twelve tasks from four datasets, three per tier of tile emptiness, each with a fixed pool of at most about 5,000 tiles.
 
-| Tier    | % empty tiles | Tasks                                                              |
-| ------- | ------------- | ------------------------------------------------------------------ |
+| Tier    | % empty tiles | Tasks                                                                |
+| ------- | ------------- | -------------------------------------------------------------------- |
 | Full    | < 5%          | `malaria/trophozoite`, `malaria/difficult`, `malaria/red_blood_cell` |
-| Partial | 5–60%         | `birds/bird`, `dota/tennis_court`, `dota/harbor`                   |
-| Sparse  | 60–90%        | `dota/ship`, `dota/plane`, `dota/small_vehicle`                    |
-| Rare    | ≥ 90%         | `kenyan_wildlife/giraffe`, `dota/helicopter`, `dota/storage_tank`  |
+| Partial | 5–60%         | `birds/bird`, `dota/tennis_court`, `dota/harbor`                     |
+| Sparse  | 60–90%        | `dota/ship`, `dota/plane`, `dota/small_vehicle`                      |
+| Rare    | ≥ 90%         | `kenyan_wildlife/giraffe`, `dota/helicopter`, `dota/storage_tank`    |
 
 [`clc12/clc12_tiles.csv`](clc12/) lists all 33,605 counting units with their source image, tile rectangle, and ground-truth count, so the benchmark can be used without this codebase. With the zero-shot predictions next to it, estimators and sampling strategies can be tested on CPU with no image download. The task definitions are in `counting_benchmark/outputs/selected_classes.json`. Dataset statistics, licenses, and citations are in [`counting_datasets/datasets.md`](counting_datasets/datasets.md).
 
@@ -91,11 +91,14 @@ Some reported numbers have sources outside this repository. GPU-hours and infere
 ## Citation
 
 ```bibtex
-@article{jeong2026clc,
-  title   = {What Factors Matter for Collection-Level Counting with Human--{AI} Collaboration?},
-  author  = {Jeong, Seoyun and Lawrence, Logan and Martin, Owen L. and Koger, Benjamin and Sheldon, Daniel and Maji, Subhransu},
-  journal = {arXiv preprint arXiv:2611.14380},
-  year    = {2026}
+@misc{jeong2026factorsmattercollectionlevelcounting,
+      title={What Factors Matter for Collection-Level Counting with Human--{AI} Collaboration?},
+      author={Seoyun Jeong and Logan Lawrence and Owen L. Martin and Benjamin Koger and Daniel Sheldon and Subhransu Maji},
+      year={2026},
+      eprint={2611.14380},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2611.14380},
 }
 ```
 
